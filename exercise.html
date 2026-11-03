@@ -1,54 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button</title>
-
-  <style>
-    .yellow-button {
-      background-color: rgb(241, 107, 107);
-      border-radius: 40%;
-    }
-
-    .orange-button {
-      background-color: rgb(156, 238, 190);
-    }
-  </style>
-
+  <title>Document</title>
 </head>
-
 <body>
-  <button>
-    Danixel
-  </button>
-
-  <button>
-    Pizza
-  </button>
-
-  <p>
-    Hello, World!
-  </p>
-
-  <p>
-    Today I did droprd my phone in sink.
-  </p>
-
-  <button class="yellow-button">
-    Add to card
-  </button>
-  <button class="orange-button">
-    Buy now
-  </button>
-
   <script>
-
-console.log('Welcome!')
-
+    const name = 'Danial';
+    console.log(`My name is: ${name}`);
+    const cost = 5 + 2 * 3 + 9 ;
+    console.log(`cost of food: $${cost}`);
+    const tax = cost * 0.1;
+    console.log(`Tax(10%): $${tax} `);
+    // console.log(`Total Cost: $${cost + tax}`);
+    const totalCost = cost + tax
+    console.log(`totalCost: $${totalCost}`);
+    
+    
+    
   </script>
-
 </body>
-
 </html>
