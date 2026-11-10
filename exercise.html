@@ -9,25 +9,109 @@
 
 <body>
   <script>
-    // const hour = 12
-    // const name = 'Danial'
+    /*
+    const hour = 12
+    const name = 'Danial'
 
-    // if (hour >= 6 && hour <= 12) {
-    //   console.log(`Good Moorning ${name}`);
-    // } else if (hour >= 13 && hour <= 17) {
-    //   console.log(`Good Afternoon ${name}`);
-    // } else console.log(`Good Night ${name}`);
+    if (hour >= 6 && hour <= 12) {
+      console.log(`Good Moorning ${name}`);
+    } else if (hour >= 13 && hour <= 17) {
+      console.log(`Good Afternoon ${name}`);
+    } else console.log(`Good Night ${name}`);
 
     const age = 64   
     const isHoliday = false
 
-    // (age <= 6 || age >= 65) ? console.log('Discount' )
-    // : console.log('No Discount');
+    (age <= 6 || age >= 65) ? console.log('Discount' )
+    : console.log('No Discount');
     if ((age <= 6 || age >= 65) && !isHoliday) {
       console.log('Discount');
     } else console.log('No Discount');
+    */
     
-    
+   function greet(name) {
+    if (!name) {
+      console.log('Hi there!');
+    } else {      
+      console.log(`Hello ${name}!`);
+    }
+   } 
+    greet();
+
+function convertToFahrenheit (celsius) {
+  return (celsius * 9 / 5) + 32
+}
+function convertToCelsius(fahrenheit) {
+  return (fahrenheit - 32 ) * 5 /9
+}
+function convertTemperature(degrees, unit) {
+  let result = ''
+  if (unit === 'F') {
+    result =     convertToCelsius(degrees)
+    return `${result}C`;
+  } else if (unit === 'C') {
+    result = convertToFahrenheit(degrees)
+
+    return `${result}F`
+  }
+}
+
+console.log(convertTemperature(25, 'C'));
+console.log(convertTemperature(86, 'F'));
+
+/*
+ function convertToFahrenheit(celsius) {
+        return (celsius * 9 / 5) + 32;
+      }
+
+      function convertToCelsius(fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+      }
+
+      function convertTemperature(degrees, unit) {
+        if (unit === 'C') {
+          const result = convertToFahrenheit(degrees);
+          return `${result}F`;
+        } else if (unit === 'F') {
+          const result = convertToCelsius(degrees);
+          return `${result}C`;
+        }
+      }
+
+      console.log(convertTemperature(25, 'C'));
+*/
+function convertLenghth(lenght, from, to) {
+  if (from ==='km'&& to === 'miles' ) {
+    const result = lenght / 1.6
+  } else if (from === 'miles' && to ==='km') {
+    const result = lenght * 1.6
+  } else {
+    const result = lenght
+    return result;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </script>
 </body>
