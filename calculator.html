@@ -68,6 +68,7 @@
     calculation = eval(calculation)
     console.log(calculation);
     
+    localStorage.setItem('calculation', JSON.stringify(calculation))
   ">=</button>
     <button onclick="
     calculation += ' / '
@@ -85,7 +86,11 @@
   </p>
 
   <script>
-    let calculation = "";
+  
+    let calculation =JSON.parse(localStorage.getItem('calculation'));
+    if (!calculation) {
+      calculation = 0
+    }
   </script>
 </body>
 

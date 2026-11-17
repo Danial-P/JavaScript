@@ -8,27 +8,55 @@
 </head>
 
 <body>
+
+  <button onclick="
+    playGame('heads');
+    ">heads</button>
+  <button onclick="
+    playGame('tails');
+    
+  ">tails</button>
   <script>
-    const randomNumber = Math.random()
-    let result = (randomNumber > 0.5) ? 'head' : 'tails'
+    
 
-    const guess = 'head'
-
-    // if (randomNumber >= 0 && randomNumber < 0.5) {
-    //   result = 'head'
-    // } else {
-    //   result = 'tails'
-    // }
-    if (result === guess) {
-      console.log('You win');
-    } else {
-      console.log('You lose');
+    function pickComputerMove() {
+      const randomNumber = Math.random()
+      let computerMove = ''
+      if (randomNumber < 1 / 2) {
+        computerMove = 'heads'
+      } else {
+        computerMove = 'tails'
+      }
+      return computerMove;
     }
 
-    
+    function playGame(guess) {
+      const score = {
+        wins: 0,
+        losses: 0
+      };
+      
+      const computerMove = pickComputerMove()
+
+      if (guess === computerMove) {
+        score.wins += 1
+        console.log('You win');
+      } else {
+        score.losses += 1
+        console.log('You losses');
+      }
+
+    }
     
 
-    console.log(result);
+    /*
+    function playGame(guess) {
+      const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+      console.log(guess === result ? 'You win!' : 'You lose!');
+    }
+    */
     
 
   </script>
