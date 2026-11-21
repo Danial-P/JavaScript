@@ -23,6 +23,10 @@
     }
     localStorage.removeItem('score')
   ">Reset</button>
+  <button onclick="
+    console.log(score);
+    
+  ">score</button>
   <script>
     let score = JSON.parse(localStorage.getItem('score')) || {
       wins: 0,
