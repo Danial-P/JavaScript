@@ -8,7 +8,6 @@
 <body>
   <p>Cart Quantity</p>
   <button onclick="
-  console.log(`Cart Quantity: ${cartQuantity}`);
   ">Show Quantity</button>
   <button onclick="
   updateCartQuantity(1);
@@ -26,9 +25,8 @@
   updateCartQuantity(5);
   ">+5</button>
   <button onclick="
-  cartQuantity = 0
-  console.log(`Cart was reset.`)
-  console.log(`Cart Quantity: ${cartQuantity}`)
+    resetCartQuantity('Cart Reset.')
+  
   ">Reset Cart</button>
   <button onclick="
     updateCartQuantity(-1);
@@ -39,9 +37,15 @@
   <button onclick="
     updateCartQuantity(-3);
   ">-3</button>
+  <p class="js-resetCartQuantity"></p>
+  <p class="js-quantity"></p>
+
 
   <script>
-    let cartQuantity = 0
+    let cartQuantity = JSON.parse(localStorage.
+      getItem('cartQuantity')) || 0
+
+    cartQuantityInPage()
 
     function updateCartQuantity(value) {
       if (cartQuantity + value > 10) {
@@ -53,9 +57,28 @@
         return;
       }
         cartQuantity += value
-        console.log(`Cart Quantity: ${cartQuantity}`);
-    }
+        localStorage.setItem('cartQuantity', JSON.
+          stringify(cartQuantity))
+          cartQuantityInPage()  
+          resetCartQuantity('')
 
+    }
+    function cartQuantityInPage() {
+      document.querySelector('.js-quantity').
+        innerHTML = `Cart Quantity: ${cartQuantity}`
+    }
+    function resetCartQuantity(resetValue) {
+      if (resetValue === '') {
+        document.querySelector('.js-resetCartQuantity'). 
+          innerHTML = resetValue
+      } else {
+      cartQuantity = 0
+      localStorage.removeItem('cartQuantity')
+      document.querySelector('.js-resetCartQuantity').
+        innerHTML = resetValue
+      cartQuantityInPage()  
+      }
+    }
 
   </script>
 

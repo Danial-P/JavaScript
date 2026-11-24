@@ -6,12 +6,46 @@
   <title>DOM</title>
 </head>
 <body>
+  <!--
   <button>hello</button>
   <button class="js-button">Second button</button>
+  -->
 
+  <button onclick="
+    playGame('heads')
+  " class="js-heads-button">heads</button>
+  <button onclick="
+    playGame('tails')
+  " class="js-tails-bitton">tails</button>
+  <p class="js-choice"></p>
+
+  <br>
+  <br>
+  <br>
+  <input class="js-name" onkeydown="
+    handleNameKeydown(event)
+  ">
+  <button onclick="
+    displayName()
+  "di>Submit</button>
+  <p class="js-display"></p>
   <script>
+    function displayName() {
+      const inputElement = document.querySelector('.js-name')
+      let name = inputElement.value
+      document.querySelector('.js-display').
+        innerHTML = `Your  name is: ${name}`
+    }
+    function handleNameKeydown(event) {
+      if (event.key === 'Enter') {
+        displayName()
+      }
+    }
     
-
+    function playGame(playerMove) {
+      document.querySelector('.js-choice').
+        innerHTML = `You chose: ${playerMove}`
+    }
 
 
 
